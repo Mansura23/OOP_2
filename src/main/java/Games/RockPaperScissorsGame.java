@@ -9,24 +9,23 @@ public class RockPaperScissorsGame {
         Random random = new Random();
         String[] choices = {"rock", "paper", "scissors"};
         String is_continue = "";
-        do{
+        do {
             System.out.print("Enter your move (rock, paper, scissors): ");
             String playerChoice = sc.nextLine().toLowerCase();
-            if(!playerChoice.equals("rock")&&!playerChoice.equals("paper")&&!playerChoice.equals("scissors")){
+            if (!playerChoice.equals("rock") && !playerChoice.equals("paper") && !playerChoice.equals("scissors")) {
                 System.out.println("Invalid respond. Please try again.");
                 continue;
             }
             String computerchoice = choices[random.nextInt(3)];
             System.out.println("Computer: " + computerchoice);
-            if(playerChoice.equals(computerchoice)){
+            if (playerChoice.equals(computerchoice)) {
                 System.out.println("It's a tie!");
-            } else if (playerChoice.equals("rock") && computerchoice.equals("scissors")||
-                       playerChoice.equals("scissors") && computerchoice.equals("paper")||
-                       playerChoice.equals("paper")&& computerchoice.equals("rock")){
-                        System.out.println("You win!");
+            } else if (playerChoice.equals("rock") && computerchoice.equals("scissors") ||
+                    playerChoice.equals("scissors") && computerchoice.equals("paper") ||
+                    playerChoice.equals("paper") && computerchoice.equals("rock")) {
+                System.out.println("You win!");
 
-            }
-            else{
+            } else {
                 System.out.println("You lose!");
             }
 
@@ -34,8 +33,7 @@ public class RockPaperScissorsGame {
             is_continue = sc.nextLine().toLowerCase();
 
 
-
-        }while (is_continue.equals("yes"));
+        } while (is_continue.equals("yes"));
 
         System.out.println("Game over!");
         sc.close();
